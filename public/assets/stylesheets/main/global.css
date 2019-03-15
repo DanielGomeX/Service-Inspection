@@ -15,6 +15,13 @@
 *{
 	font-family: 'centurygothic' !important;
 }
+a, .tabs .tab a{
+	color: #0d47a1;
+}
+.tabs .indicator{
+	background-color: #0d47a1 !important;
+
+}
 
 .material-icons {
 	line-height: 1;
@@ -33,7 +40,15 @@
 }
 
 /*TYPOGRAPHY*/
-
+.justify{
+	text-align: justify !important;
+}
+.letterspaced{
+	letter-spacing: 0.1em !important;
+}
+.bold{
+	font-weight: bold !important; 
+}
 .uppercase{
 	text-transform:  uppercase !important;
 }

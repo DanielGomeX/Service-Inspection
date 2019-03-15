@@ -7,18 +7,18 @@
 		$styles	= [
 				"vendor/materialize.min",
 				"vendor/dataTables.material.min",
+				"vendor/sweetalert2.min",
 				"main/global",
 		];  
 		$scripts = [	
 				"vendor/jquery.min",
 				"vendor/materialize.min",
+				"vendor/sweetalert2.all.min",
 				"vendor/dataTables.material.min",
 				"main/global",
 		];
-	// if($_SESSION['user']['role'] == "Admin" ){
 		switch ($page) {
 			case 'dashboard':
-				// array_push($scripts,"modules/admin/demo");
 				$data    = [
 						'title' => "4M Mechanical PTY LTD | Home", 
 						"active" => "dashboard",
@@ -34,9 +34,38 @@
 						"active" => "cars",
 						'scripts'=>$scripts,
 						'styles'=>$styles,
-						// 'list'=>"Sports.getSportList('/views/admin/list-sports.php')"
 					     ];
 				$content = "admin/page-cars";
+			break;
+			case 'car':
+				array_push($scripts,"main/cars");
+				$data    = [
+						'title' =>  "4M Mechanical PTY LTD | Car Details", 
+						"active" => "cars",
+						'scripts'=>$scripts,
+						'styles'=>$styles,
+					     ];
+				$content = "admin/page-car";
+			break;
+			case 'customers':
+				array_push($scripts,"main/customers");
+				$data    = [
+						'title' =>  "4M Mechanical PTY LTD | Customers", 
+						"active" => "customers",
+						'scripts'=>$scripts,
+						'styles'=>$styles,
+					     ];
+				$content = "admin/page-customers";
+			break;
+			case 'customer':
+				array_push($scripts,"main/cars");
+				$data    = [
+						'title' =>  "4M Mechanical PTY LTD | Customer Details", 
+						"active" => "customers",
+						'scripts'=>$scripts,
+						'styles'=>$styles,
+					     ];
+				$content = "admin/page-customer";
 			break;
 			case 'form-car':
 				array_push($scripts,"main/cars");
@@ -45,20 +74,20 @@
 						"active" => "form-car",
 						'scripts'=>$scripts,
 						'styles'=>$styles,
-						// 'list'=>"Sports.getSportList('/views/admin/list-sports.php')"
 					     ];
 				$content = "admin/form-cars";
 			break;
-			
+			case 'form-customer':
+				array_push($scripts,"main/customers");
 				$data    = [
-						'title' =>  "4M Mechanical PTY LTD | Cars", 
-						"active" => "cars",
+						'title' =>  "4M Mechanical PTY LTD | Customer Form", 
+						"active" => "form-customer",
 						'scripts'=>$scripts,
 						'styles'=>$styles,
-						// 'list'=>"Sports.getSportList('/views/admin/list-sports.php')"
 					     ];
-				$content = "admin/page-cars";
+				$content = "admin/form-customers";
 			break;
+			
 			default:
 				$data    = [
 						'title' => "Error 404", 
@@ -69,6 +98,5 @@
 				$content = "modules/error";
 			break;
 		}
-	// }
 	view::make("layouts/".strtolower($_SESSION['user']['role'])."/content");
 ?>

@@ -10,6 +10,7 @@ var materializeInit = () => {
 	$('.tabs').tabs();
 	$('.table').DataTable();
 	$('.fixed-action-btn').floatingActionButton();
+	$('.modal').modal();
 };
 
 var previousPage = () =>{

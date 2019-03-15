@@ -18,7 +18,7 @@
 			<li><a href="?p=dashboard"><i class="material-icons left">home</i>Home</a></li>
 			<li><a href="?p=customers"><i class="material-icons left">sentiment_very_satisfied</i>Customers</a></li>
 			<li><a href="?p=cars"><i class="material-icons left">directions_car</i>Cars</a></li>
-			<li><a href="?p=reports"><i class="material-icons left">insert_chart</i>Reports</a></li>
+			<li><a href="?p=reports"><i class="material-icons left">insert_chart</i>Inspections</a></li>
 			<li><a href="?p=logout"><i class="material-icons left">power_settings_new</i>Logout</a></li>
 		</ul>
 	</div>
@@ -38,6 +38,6 @@
 		<li><a href="?p=dashboard"><i class="material-icons left">home</i>Home</a></li>
 		<li><a href="?p=customers"><i class="material-icons left">sentiment_very_satisfied</i>Customers</a></li>
 		<li><a href="?p=cars"><i class="material-icons left">directions_car</i>Cars</a></li>
-		<li><a href="?p=reports"><i class="material-icons left">insert_chart</i>Reports</a></li>
+		<li><a href="?p=reports"><i class="material-icons left">insert_chart</i>Inspections</a></li>
 		<li><a href="?p=logout"><i class="material-icons left">power_settings_new</i>Logout</a></li>
 </ul>

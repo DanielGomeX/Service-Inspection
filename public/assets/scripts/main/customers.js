@@ -1,6 +1,6 @@
-var Cars = {
+var Customers = {
 	delete : function(url, id){
-		$.post(base_url + url, { carId : id, controller : "delete" }, function(data){
+		$.post(base_url + url, { customerId : id, controller : "delete" }, function(data){
 			if(data.response == "Success"){
 				$("#row"+id).fadeOut("fast");
 			}
@@ -10,15 +10,15 @@ var Cars = {
 		$.post(base_url + url, $(formData).serialize(), function(data){
 			if(data.response == "Success") {
 				M.toast({html: "Success! Nice one.",classes: "green white-text"});
-				Cars.resetForm();
+				Customers.resetForm();
 			}else{
-				M.toast({html: "Failed! Plate Number Already Exists.",classes: "red llighten-1 white-text"});
+				M.toast({html: "Failed! Customer Already Exists.",classes: "red llighten-1 white-text"});
 			}
 		},"json");
 	},
 	resetForm: function(){
-		$("#carForm").trigger("reset");
-		$(".car-field").val('');
+		$("#customerForm").trigger("reset");
+		$(".customer-field").val('');
 		$("#controller").val("updateInsert");
 	}
 }
@@ -27,11 +27,11 @@ var Cars = {
 $(document).ready(function(){
 	
 	$("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
-
-	$(document).on("submit","#carForm",function(){
-		Cars.updateInsert("/app/admin/carController.php","#carForm");
+	
+	$(document).on("submit","#customerForm",function(){
+		Customers.updateInsert("/app/admin/customerController.php","#customerForm");
 	});
-	$(document).on("click",".car-delete-btn",function(){
+	$(document).on("click",".customer-delete-btn",function(){
 		let id = $(this).data("id");
 		Swal.fire({
 			title: 'Are you sure?',
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			confirmButtonText: 'Yes, delete it!'
 		}).then((result) => {
 			if (result.value) {
-				Cars.delete("/app/admin/carController.php",id);
+				Customers.delete("/app/admin/customerController.php",id);
 				Swal.fire(
 					'Deleted!',
 					'Your file has been deleted.',
