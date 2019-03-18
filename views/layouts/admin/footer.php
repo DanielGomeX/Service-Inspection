@@ -1,11 +1,11 @@
 			</div>
 		</div>
-		<footer class="footer">
-			<div class="container-fluid">
-				
-				<p class="copyright pull-right">
-					&copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.facebook.com/imlogicgates">Service Inspection</a>
-				</p>
+
+		<footer class="page-footer theme-darkgrey-bg">
+			<div class="footer-copyright">
+				<div class="container">
+				&copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.facebook.com/imlogicgates" class="white-text">Service Inspection | All Rights Reserved</a>
+				</div>
 			</div>
 		</footer>
 	</div>

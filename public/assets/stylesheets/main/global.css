@@ -4,6 +4,11 @@
 	src: url('../../fonts/centurygothic.ttf');
 }
 	
+@font-face{
+	font-family: 'futura-bold';
+	src: url('../../fonts/FuturaPTBold.otf');
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -15,12 +20,27 @@
 *{
 	font-family: 'centurygothic' !important;
 }
+h1, h2, h3, h4, h5{
+	font-family: 'futura-bold' !important;
+	text-transform: uppercase !important;
+}
+
 a, .tabs .tab a{
 	color: #0d47a1;
 }
 .tabs .indicator{
 	background-color: #0d47a1 !important;
+}
 
+.switch label input[type=checkbox]:checked+.lever{
+	    background-color: #4a526b !important;
+}
+.switch label input[type=checkbox]:checked+.lever:after{
+	    background-color: #282e40 !important;
+}
+
+.card-info .card-action{
+	border-top: unset;
 }
 
 .material-icons {
@@ -60,6 +80,15 @@ a, .tabs .tab a{
 .theme-blue-bg{
 	background-color: #0086be !important;
 }
+
+.theme-grey-bg{
+	background-color: #556080 !important;
+}
+
+.theme-darkgrey-bg{
+	background-color: #282e40 !important;
+}
+
 
 .theme-yellow-bg{
 	background-color: #f9bf51 !important;

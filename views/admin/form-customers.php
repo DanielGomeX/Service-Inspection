@@ -36,7 +36,7 @@
 							</div>
 							<div class="row">
 								<div class="col s12 center">
-									<button type="submit" class="btn btn-large orange accent-3 waves-effect waves-light"><i class="material-icons left">save</i>Save</button>
+									<button type="submit" class="btn btn-large theme-grey-bg white-text waves-effect waves-light"><i class="material-icons left">save</i>Save</button>
 								</div>
 							</div>
 						 </form>

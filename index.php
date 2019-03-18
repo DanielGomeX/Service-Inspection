@@ -1,4 +1,4 @@
-<?php @ob_start(); include('config/view.php'); include('config/URI.php');  if (session_status() == PHP_SESSION_NONE) URI::session();
+<?php @ob_start(); include('config/view.php'); include('config/URI.php'); if (session_status() == PHP_SESSION_NONE) URI::session();
 	if(!isset($_SESSION['user']['isLoggedIn']) && $_SESSION['user']['isLoggedIn'] != true){
 			URI::redirect("login.php"); 
 			return false;
@@ -12,6 +12,7 @@
 		];  
 		$scripts = [	
 				"vendor/jquery.min",
+				"vendor/jquery.timeago",
 				"vendor/materialize.min",
 				"vendor/sweetalert2.all.min",
 				"vendor/dataTables.material.min",
@@ -39,6 +40,7 @@
 			break;
 			case 'car':
 				array_push($scripts,"main/cars");
+				array_push($scripts,"main/inspections");
 				$data    = [
 						'title' =>  "4M Mechanical PTY LTD | Car Details", 
 						"active" => "cars",
@@ -57,15 +59,15 @@
 					     ];
 				$content = "admin/page-customers";
 			break;
-			case 'customer':
-				array_push($scripts,"main/cars");
+			case 'inspection':
+				array_push($scripts,"main/inspections");
 				$data    = [
-						'title' =>  "4M Mechanical PTY LTD | Customer Details", 
-						"active" => "customers",
+						'title' =>  "4M Mechanical PTY LTD | Service Inspection Details", 
+						"active" => "inspections",
 						'scripts'=>$scripts,
 						'styles'=>$styles,
 					     ];
-				$content = "admin/page-customer";
+				$content = "admin/page-inspection";
 			break;
 			case 'form-car':
 				array_push($scripts,"main/cars");
@@ -86,6 +88,21 @@
 						'styles'=>$styles,
 					     ];
 				$content = "admin/form-customers";
+			break;
+			case 'form-inspection':
+				array_push($scripts,"main/inspections");
+				$data    = [
+						'title' =>  "4M Mechanical PTY LTD | Service Inspection Form", 
+						"active" => "form-inspection",
+						'scripts'=>$scripts,
+						'styles'=>$styles,
+					     ];
+				$content = "admin/form-inspections";
+			break;
+			case 'logout':
+				URI::session();
+				URI::destroy();
+				URI::redirect('login.php');
 			break;
 			
 			default:

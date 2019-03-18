@@ -15,4 +15,4 @@
 		<link rel="stylesheet" type="text/css" href="<?php URI::style($key); ?>"><?php endforeach;?>
 	
 </head>
-<body class="night">
+<body class="valign-wrapper">

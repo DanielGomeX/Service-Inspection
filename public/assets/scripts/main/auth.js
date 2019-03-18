@@ -7,11 +7,13 @@ var User = {
 			data : LoginData,
 			success : function(data){
 				console.log(data);
-
 				if(data.response == "success") {
-					window.location.href = "";
+					M.toast({html: data.message,classes: "green darken-1 white-text",displayLength:500,completeCallback:function(){
+						window.location.href="";
+					}
+				});
 				} else if (data.response == "failed") {
-					alert("Fail");
+					M.toast({html: data.message,classes: "red lighten-1 white-text"});
 				}
 			}, 
 			error : function(){

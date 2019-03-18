@@ -10,11 +10,13 @@ var materializeInit = () => {
 	$('.tabs').tabs();
 	$('.table').DataTable();
 	$('.fixed-action-btn').floatingActionButton();
+	$('.tooltipped').tooltip();
 	$('.modal').modal();
+	$("time.timeago").timeago();
 };
 
-var previousPage = () =>{
-		function preventBack(){window.history.forward();} 
-		setTimeout("preventBack()", 0); 
-		window.onunload=function(){null}; 
-}
+
+$(document).on("click",'.paginate_button',function(){
+	$("time.timeago").timeago();
+	
+})

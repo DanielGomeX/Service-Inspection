@@ -5,6 +5,7 @@
 	$cars = new lib_cars(); 
 	$customers = new lib_customers(); 
 	$carId = (isset($_REQUEST['id']) && !empty($_REQUEST['id']) ? $_REQUEST['id'] : null);
+	$customerId = (isset($_REQUEST['c']) && !empty($_REQUEST['c']) ? $_REQUEST['c'] : null);
 	$carDetails= (array) json_decode($cars->getCarRow($carId));
 ?>
 
@@ -25,7 +26,7 @@
 								<select name="customerId" required>
 								<option value="" disabled selected>Choose Customer</option>
 								<?php foreach($customers->showCustomers() as $key => $row):?>
-									<option value="<?=$row['customerId'];?>" <?=(isset($carDetails['customerId']) && !empty($carDetails['customerId']) && $row['customerId'] === $carDetails['customerId']) ? 'selected': '';?>><?=$row['fullname'];?></option>
+									<option value="<?=$row['customerId'];?>" <?=(isset($carDetails['customerId']) && !empty($carDetails['customerId']) && $row['customerId'] === $carDetails['customerId']) ?  'selected': (isset($customerId) && !empty($customerId) && $row['customerId'] === $customerId) ? 'selected' :'' ;?>><?=$row['fullname'];?></option>
 								<?php endforeach;?>
 								</select>
 								<label data-error="Select an option">Car Owner</label>
@@ -42,7 +43,7 @@
 							</div>
 							<div class="row">
 								<div class="col s12 center">
-									<button type="submit" class="btn btn-large orange accent-3 waves-effect waves-light"><i class="material-icons left">save</i>Save</button>
+									<button type="submit" class="btn btn-large  theme-grey-bg white-text waves-effect waves-light"><i class="material-icons left">save</i>Save</button>
 								</div>
 							</div>
 						 </form>

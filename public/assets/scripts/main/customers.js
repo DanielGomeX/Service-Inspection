@@ -9,10 +9,12 @@ var Customers = {
 	updateInsert: function(url, formData){
 		$.post(base_url + url, $(formData).serialize(), function(data){
 			if(data.response == "Success") {
-				M.toast({html: "Success! Nice one.",classes: "green white-text"});
-				Customers.resetForm();
+				M.toast({html:  data.message ,classes: "green white-text",displayLength:500,completeCallback:function(){
+						window.location.href="?p=customers";
+					}
+				});
 			}else{
-				M.toast({html: "Failed! Customer Already Exists.",classes: "red llighten-1 white-text"});
+				M.toast({html:  data.message ,classes: "red llighten-1 white-text"});
 			}
 		},"json");
 	},

@@ -8,23 +8,23 @@
 
 		public function checkAuth($data = array(), $status = 1) {
 			try {
-					$sql   = $this->DB->prepare("SELECT * FROM ".$this->table['users']." WHERE username=:username AND password=:password AND status=:status LIMIT 1");
-							 $sql->execute(array(":username" => URI::sanitize($data['username']), ":password" => $data['password'], ":status" => $status));
+					$sql   = $this->DB->prepare("SELECT * FROM ".$this->table['users']." WHERE username=:username AND password=:password AND status='1' LIMIT 1");
+							 $sql->execute(array(":username" => URI::sanitize($data['username']), ":password" => URI::encrypt($data['password']) ));
 					$getRow = $sql->fetch(PDO::FETCH_ASSOC);
 					if($sql->rowCount() > 0) {
 						
 						$session = [
-									"id"   	 		=> $getRow['userId'],
+									"id"   	 		=> $getRow['uid'],
 									'username' 		=> $getRow['username'],
 									'role' 			=> $getRow['role'],
 									"isLoggedIn" 	=> true
 									];
 
 						self::sessionSet($session);
-						$response = ["response" => "success", "message" => "success", 'role' => $_SESSION['user']['role'] ];
+						$response = ["response" => "success", "message" => "Logged In Successfully", 'role' => $_SESSION['user']['role'] ];
 					
 					} else {
-						$response = ["response" => "failed", "message" => "Invalid username or password.!"];
+						$response = ["response" => "failed", "message" => "Invalid username or password!"];
 					}
 
 					return json_encode($response);	

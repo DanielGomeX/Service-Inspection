@@ -1,7 +1,13 @@
 /* BLUE COLOR : #0086be*/ 
 /* YELLOW  COLOR : #f9bf51*/ 
 
-body {
+body{
+		width: 100wh;
+		height: 100vh;
+		background-color: #282e40 !important;
+}
+
+.body-bg-moving {
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
@@ -48,9 +54,26 @@ body {
 		background-position: 0% 50%
 	}
 }	
+ 
+.btn{
+	color: #282e40 !important;
+}
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default){
+	color: #FFFFFF;
+	border-bottom: 1px solid #ffffff;
+}
 
-.login-logo{
-	position: relative;
-    top: 2em;
-    margin-bottom: -3.5em;
+.input-field>label,
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFFFF !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFFFFF !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #FFFFFF !important;
 }
